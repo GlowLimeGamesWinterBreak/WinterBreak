@@ -2,11 +2,13 @@
 -target:library
 -nowarn:0169
 -out:'Temp/Assembly-CSharp.dll'
--r:'/Applications/Unity 5.3.1f1/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
--r:'/Applications/Unity 5.3.1f1/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
--r:'/Applications/Unity 5.3.1f1/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
--r:'/Applications/Unity 5.3.1f1/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
--define:UNITY_5_3_1
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
+-define:UNITY_5_3_2
 -define:UNITY_5_3
 -define:UNITY_5
 -define:ENABLE_NEW_BUGREPORTER
@@ -78,5 +80,5 @@
 -define:UNITY_EDITOR_OSX
 -define:CROSS_PLATFORM_INPUT
 'Assets/Scripts/FirstPersonController.cs'
--r:'/Applications/Unity 5.3.1f1/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
--r:'/Applications/Unity 5.3.1f1/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'
