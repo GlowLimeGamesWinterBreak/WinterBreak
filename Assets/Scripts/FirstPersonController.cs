@@ -55,11 +55,11 @@ public class FirstPersonController : MonoBehaviour {
 
 	void OnTriggerEnter (Collider col){
 		print (col.gameObject.name);
-		if (col.gameObject.name == "Powerup") {
+		if (col.gameObject.name == "Powerup" || col.gameObject.name == "Powerup(Clone)") {
 			jump = true;
 			Destroy (col.gameObject);
 		}
-		if (col.gameObject.name == "Enemy") {
+		if (col.gameObject.name == "Enemy" || col.gameObject.name == "Enemy(Clone)") {
 			Destroy (this);
 		}
 	}
