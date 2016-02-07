@@ -10,6 +10,7 @@ public class FirstPersonController : MonoBehaviour {
 	float verticalRotation = 0;
 	float verticalVelocity = 0;
 	public float jumpSpeed = 7.0f;
+	public bool jump = false;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +38,7 @@ public class FirstPersonController : MonoBehaviour {
 
 		verticalVelocity += Physics.gravity.y * Time.deltaTime;
 
-		if (cc.isGrounded && Input.GetButton ("Jump")) {
+		if (cc.isGrounded && Input.GetButton ("Jump") && jump == true) {
 			verticalVelocity = jumpSpeed;
 		}
 
@@ -50,5 +51,16 @@ public class FirstPersonController : MonoBehaviour {
 
 		cc.Move (speed * Time.deltaTime); //does not expect speed, it expects how many units of distance traveling this frame
 
+	}
+
+	void OnTriggerEnter (Collider col){
+		print (col.gameObject.name);
+		if (col.gameObject.name == "Powerup") {
+			jump = true;
+			Destroy (col.gameObject);
+		}
+		if (col.gameObject.name == "Enemy") {
+			Destroy (this);
+		}
 	}
 }
