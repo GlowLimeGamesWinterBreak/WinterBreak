@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{A370EB8D-76C3-79B6-7B89-BBD4E58EDD29}") = "WinterBreak-master", "Assembly-CSharp.csproj", "{5F17D98E-3F40-E1FD-80F9-A7E6A534098E}"
+EndProject
+Project("{A370EB8D-76C3-79B6-7B89-BBD4E58EDD29}") = "WinterBreak-master", "Assembly-CSharp-Editor.csproj", "{584D71EC-6E5E-674D-9D22-05A906358BD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F17D98E-3F40-E1FD-80F9-A7E6A534098E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F17D98E-3F40-E1FD-80F9-A7E6A534098E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F17D98E-3F40-E1FD-80F9-A7E6A534098E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F17D98E-3F40-E1FD-80F9-A7E6A534098E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{584D71EC-6E5E-674D-9D22-05A906358BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{584D71EC-6E5E-674D-9D22-05A906358BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{584D71EC-6E5E-674D-9D22-05A906358BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{584D71EC-6E5E-674D-9D22-05A906358BD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
