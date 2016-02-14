@@ -45,9 +45,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
-     <Compile Include="Assets\Scripts\SpawnItem.cs" />
+     <Compile Include="Assets\Scripts\SpawnItems.cs" />
      <Compile Include="Assets\Scripts\SpawnTree.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
