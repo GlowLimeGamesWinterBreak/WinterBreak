@@ -45,16 +45,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Button.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
+=======
+     <Compile Include="Assets\Scripts\EnemyAI.cs" />
+>>>>>>> 369ae77244d95aadf5d6e17674b0acdb8ea5321c
      <Compile Include="Assets\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Scripts\LoadLevel.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
-     <Compile Include="Assets\Scripts\SpawnItem.cs" />
+     <Compile Include="Assets\Scripts\SpawnItems.cs" />
      <Compile Include="Assets\Scripts\SpawnTree.cs" />
      <Compile Include="Assets\Scripts\TimeManager.cs" />
  <Reference Include="UnityEngine.Networking">
