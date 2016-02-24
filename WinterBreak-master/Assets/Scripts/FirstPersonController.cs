@@ -11,6 +11,7 @@ public class FirstPersonController : MonoBehaviour {
 	float verticalVelocity = 0;
 	public float jumpSpeed = 7.0f;
 	public bool jump = false;
+	public AudioSource walkSound;
 
 	CharacterController characterController;
 
@@ -18,7 +19,7 @@ public class FirstPersonController : MonoBehaviour {
 	void Start () {
 		Screen.lockCursor = true;
 		characterController = GetComponent<CharacterController> ();
-
+		walkSound = GetComponent<AudioSource> ();
 	}
 
 
@@ -40,13 +41,17 @@ public class FirstPersonController : MonoBehaviour {
 
 		verticalVelocity += Physics.gravity.y * Time.deltaTime;
 
-		if (characterController.isGrounded && Input.GetButton("Jump") && jump == true) {
+		if (characterController.isGrounded && Input.GetButton("Jump")) {
 			verticalVelocity = jumpSpeed;
 		}
 
 		Vector3 speed = new Vector3 (sideSpeed, verticalVelocity, forwardSpeed * movementSpeed); //x,y,z forwardspeed is forward and back
 
 		speed = transform.rotation * speed;
+		if (forwardSpeed < .01 && sideSpeed < .01)
+			walkSound.Stop ();
+		else if (walkSound.isPlaying != true)
+			walkSound.Play ();
 
 
 		//cc.SimpleMove(speed); //takes care of gravity, ignores y. jump/fly/explosion cannot use simple
