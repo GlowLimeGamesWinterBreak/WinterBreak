@@ -34,22 +34,30 @@ public class Enemy : MonoBehaviour {
 //
 	void OnTriggerEnter (Collider other)
 	{
-		if (other.gameObject == player) { //
-			Application.LoadLevel ("GameOver");
-		}
+//		if (other.gameObject == player) { //
+//			Application.LoadLevel ("GameOver");
+//		}
 
-//		// If the entering collider is the player...
+		// If the entering collider is the player...
 //		if(other.gameObject == player)
 //		{
 //			// ... the player is in range.
 //			playerInRange = true;
 //		}
 //		if(playerHealth.currentHealth > 0){
-//			playerHealth.TakeDamage (attackDamage);
+//			PlayerHealth.currentHealth -= attackDamage;
+//			PlayerHealth.healthSlider.value = PlayerHealth.currentHealth;
+//			if (PlayerHealth.currentHealth <= 0) {
+//				Application.LoadLevel ("GameOver");
+//			}
+
+
+
+		playerHealth.TakeDamage (attackDamage);
 //		}
 	}
-//
-//
+
+
 	void OnTriggerExit (Collider other)
 	{
 		// If the exiting collider is the player...

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class FirstPersonController : MonoBehaviour {
@@ -12,6 +13,9 @@ public class FirstPersonController : MonoBehaviour {
 	public float jumpSpeed = 7.0f;
 	public bool jump = false;
 	public AudioSource walkSound;
+	public float timer = 10.0f; //
+	public Slider sprintSlider; //
+	public Slider healthSlider; //
 
 	CharacterController characterController;
 
@@ -20,6 +24,16 @@ public class FirstPersonController : MonoBehaviour {
 		Screen.lockCursor = true;
 		characterController = GetComponent<CharacterController> ();
 		walkSound = GetComponent<AudioSource> ();
+		GameObject temp = GameObject.FindGameObjectWithTag ("HealthSlider"); //
+		if (temp != null) { //
+			healthSlider = temp.GetComponent<Slider> (); //
+		} //
+		healthSlider.value = 100;
+		GameObject temp2 = GameObject.FindGameObjectWithTag ("SprintSlider"); //
+		if (temp2 != null) { //
+			sprintSlider = temp2.GetComponent<Slider> (); //
+		} //
+		sprintSlider.value = 0;
 	}
 
 
@@ -62,12 +76,43 @@ public class FirstPersonController : MonoBehaviour {
 
 	void OnTriggerEnter (Collider col){
 		print (col.gameObject.name);
-		if (col.gameObject.name == "Powerup" || col.gameObject.name == "Powerup(Clone)") {
+		if (col.gameObject.name == "PowerupSprint" || col.gameObject.name == "PowerupSprint(Clone)") {
 			jump = true;
 			Destroy (col.gameObject);
+			sprintSlider.value = timer;
+			timer -= Time.deltaTime; //
+//			while(timer < 10){
+//				sprintSlider.value = 10 - timer;
+//				movementSpeed = 10.0f; // was 5.0f
+//				mouseSensitivity = 10.0f; // was 5.0f
+//				jumpSpeed = 14.0f; // was 7.0f
+//				timer += 1;
+//			}
+
+			movementSpeed = 10.0f; // was 5.0f
+			mouseSensitivity = 10.0f; // was 5.0f
+			jumpSpeed = 14.0f; // was 7.0f
+
+//			if (timer <= 10.0f) {
+//				sprintSlider.value = 10.0f - timer;
+//			} //
+//			else {
+//				sprintSlider.value = 0;
+//				movementSpeed = 5.0f;
+//				mouseSensitivity = 5.0f;
+//				jumpSpeed = 7.0f;
+//
+//			}
+
 		}
 		if (col.gameObject.name == "Enemy" || col.gameObject.name == "Enemy(Clone)") {
-			Destroy (this);
+			healthSlider.value -= 10;
+//			Destroy (this);
+		}
+
+		if (col.gameObject.name == "PowerupHealth" || col.gameObject.name == "PowerupHealth(Clone)") {
+			Destroy (col.gameObject);
+			healthSlider.value += 20;
 		}
 	}
 }

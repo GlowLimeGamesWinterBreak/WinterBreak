@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour {
 	public int startingHealth = 100;
 	public int currentHealth;
 	public Slider healthSlider;
-	public int amount; // ???
+	public int amount; //
 
 	bool isDead;
 	bool damaged;
@@ -57,6 +57,7 @@ public class PlayerHealth : MonoBehaviour {
 	{
 		// Set the death flag so this function won't be called again.
 		isDead = true;
+		Application.LoadLevel ("GameOver");
 
 //		// Turn off any remaining shooting effects.
 //		playerShooting.DisableEffects ();
