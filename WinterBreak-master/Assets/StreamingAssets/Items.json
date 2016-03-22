@@ -1,0 +1,31 @@
+[
+	{
+		"id": 0,
+		"title": "Steel Gloves",
+		"value": 6,
+		"stats": {
+			"power": 1,
+			"defence": 4,
+			"vitality": 2
+		},
+		"description": "Gloves made from steel",
+		"stackable" : false,
+		"rarity" : 2,
+		"slug" : "cursorHand_grey"
+	},
+	{
+
+		"id": 1,
+		"title": "The Great Stick",
+		"value": 543,
+		"stats": {
+			"power": 56,
+			"defence": 2,
+			"vitality": 54
+		},
+		"description": "It is a stick",
+		"stackable" : true,
+		"rarity" : 6,
+		"slug" : "cursorSword_bronze"
+	}
+]

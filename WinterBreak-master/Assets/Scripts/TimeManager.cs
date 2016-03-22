@@ -32,12 +32,15 @@ public class TimeManager : MonoBehaviour {
 		//        timerLabel.text = string.Format ("{0:00} : {1:00} : {2:000}", minutes, seconds, fraction);
 	}
 
-	private GUIStyle guiStyle = new GUIStyle ();
 
-	void OnGUI()
-	{
-		guiStyle.fontSize = 30;
-		guiStyle.normal.textColor = Color.black;
-		GUI.Label(new Rect(680,280,780,330), (int)hours + ":" + (int)minutes + ":" + (int)seconds, guiStyle);
-	}
+	// UNCOMMENT THE BELOW CODE IF NEED TO DISPLAY THE TIME
+
+//	private GUIStyle guiStyle = new GUIStyle ();
+//
+//	void OnGUI()
+//	{
+//		guiStyle.fontSize = 30;
+//		guiStyle.normal.textColor = Color.black;
+//		GUI.Label(new Rect(680,280,780,330), (int)hours + ":" + (int)minutes + ":" + (int)seconds, guiStyle);
+//	}
 }

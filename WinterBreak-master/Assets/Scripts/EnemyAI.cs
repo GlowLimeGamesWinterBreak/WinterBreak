@@ -51,7 +51,7 @@ public class EnemyAI : MonoBehaviour {
 		Vector3 enemyForward = this.transform.forward;
 
 		float temp = Vector3.Angle (enemyToPlayer, enemyForward);
-		Debug.Log (temp);
+		//Debug.Log (temp);
 		if (temp < 45)
 			return true;
 		

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	public int attackDamage = 10;
+	public int attackDamage = 1;
 
 //	Animator anim;                              // Reference to the animator component.
 	GameObject player;                          // Reference to the player GameObject.
@@ -39,11 +39,11 @@ public class Enemy : MonoBehaviour {
 //		}
 
 		// If the entering collider is the player...
-//		if(other.gameObject == player)
-//		{
+		if(other.gameObject == player)
+		{
 //			// ... the player is in range.
-//			playerInRange = true;
-//		}
+			playerInRange = true;
+		}
 //		if(playerHealth.currentHealth > 0){
 //			PlayerHealth.currentHealth -= attackDamage;
 //			PlayerHealth.healthSlider.value = PlayerHealth.currentHealth;
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour {
 
 
 
-		playerHealth.TakeDamage (attackDamage);
+//		playerHealth.TakeDamage (attackDamage);
 //		}
 	}
 
