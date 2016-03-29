@@ -128,7 +128,7 @@ public class PlayerHealth : MonoBehaviour {
 //			// ... it should die.
 //
 //
-			Death ();
+			//Death ();
 		}
 	}
 //

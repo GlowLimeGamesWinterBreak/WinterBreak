@@ -30,8 +30,10 @@ public class EnemyAI : MonoBehaviour {
 			chasePlayer = true;
 		if(chasePlayer)
 			agent.destination = player.position;
-		//else
-			//random direction
+		else{
+			NavMeshPath path;
+			//agent.SetPath(
+		}
 	}
 
 	bool CloseToPlayer(){
@@ -42,8 +44,6 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	bool inFieldOfView(){
-		//TODO not working
-		//not in range
 		Vector3 distance = player.position - this.transform.position;
 		if (distance.magnitude > visionDistance)
 			return false;
@@ -51,7 +51,6 @@ public class EnemyAI : MonoBehaviour {
 		Vector3 enemyForward = this.transform.forward;
 
 		float temp = Vector3.Angle (enemyToPlayer, enemyForward);
-		//Debug.Log (temp);
 		if (temp < 45)
 			return true;
 		

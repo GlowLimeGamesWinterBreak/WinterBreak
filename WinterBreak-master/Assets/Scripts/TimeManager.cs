@@ -9,17 +9,20 @@ public class TimeManager : MonoBehaviour {
 	private float seconds = 0.0f;
 	private float minutes = 0.0f;
 	private float hours = 0.0f;
+	private bool gameOver = true;
 
 	void Update() {
 		//        time += Time.deltaTime;
-		seconds += Time.deltaTime;
-		if (seconds > 60) {
-			minutes += 1;
-			seconds = 0;
-		}
-		if (minutes > 60) {
-			hours += 1;
-			minutes = 0;
+		if (gameOver == false) {
+			seconds += Time.deltaTime;
+			if (seconds > 60) {
+				minutes += 1;
+				seconds = 0;
+			}
+			if (minutes > 60) {
+				hours += 1;
+				minutes = 0;
+			}
 		}
 
 		//        print (hours + ":" + minutes + ":" + seconds);
@@ -30,6 +33,17 @@ public class TimeManager : MonoBehaviour {
 
 		//update the label value
 		//        timerLabel.text = string.Format ("{0:00} : {1:00} : {2:000}", minutes, seconds, fraction);
+	}
+
+	public void Stop(){
+		gameOver = true;
+	}
+
+	public void Restart(){
+		seconds = 0;
+		minutes = 0;
+		hours = 0;
+		gameOver = false;
 	}
 
 
