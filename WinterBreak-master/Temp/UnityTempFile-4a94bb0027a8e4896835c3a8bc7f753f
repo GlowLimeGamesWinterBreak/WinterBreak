@@ -79,6 +79,7 @@
 -define:UNITY_EDITOR_OSX
 -define:CROSS_PLATFORM_INPUT
 'Assets/Scripts/Button.cs'
+'Assets/Scripts/CameraScript.cs'
 'Assets/Scripts/Enemy.cs'
 'Assets/Scripts/EnemyAI.cs'
 'Assets/Scripts/EnemyManager.cs'
