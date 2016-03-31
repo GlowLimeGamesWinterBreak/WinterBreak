@@ -5,18 +5,14 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
 
 	public Sprite[] PizzaSprites;
-	public Image Pizza;
 
 // FROM HERE
 	public int startingHealth = 12;
-	public int currentHealth;
-	public int maxHealth;
-//	public int healthPerPizza;
+	public int currentHealth = 12;
 
 //	public int amount; //
 //	public GUITexture pizzaGUI;
-	public Texture[] pizzas;
-	public Texture[] images = new Texture[13];
+	public Texture[] images = new Texture[4];
 
 	bool isDead;
 	bool damaged;
@@ -105,7 +101,19 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		GUI.DrawTexture (new Rect (20, 100, 150, 400), images[currentHealth], ScaleMode.ScaleToFit);
+		int pizzaAmount = currentHealth;
+		int pizzaDiv = pizzaAmount / 4;
+		int pizzaMod = (pizzaAmount % 4);
+
+		int x = 0;
+		int y = 230;
+		for (int i = 0; i < pizzaDiv; i++) {
+			GUI.DrawTexture (new Rect (x, y, 40, 40), images [4], ScaleMode.ScaleToFit);
+			x += 40;
+		}
+		if (pizzaMod > 0) {
+			GUI.DrawTexture (new Rect (x, y, 40, 40), images [pizzaMod], ScaleMode.ScaleToFit);
+		}
 	}
 
 	public void TakeDamage(int amount){
