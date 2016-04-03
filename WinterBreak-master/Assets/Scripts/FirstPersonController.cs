@@ -20,6 +20,7 @@ public class FirstPersonController : MonoBehaviour {
 	public bool gameStart = true;
 	public bool sprint = false;
 	public float endSprint = 0f;
+	public float invulnTime = 0f;
 
 	PlayerHealth playerHealth;
 
@@ -188,14 +189,18 @@ public class FirstPersonController : MonoBehaviour {
 		}
 		if (col.gameObject.name == "Enemy" || col.gameObject.name == "Enemy(Clone)") {
 //			playerHealth.TakeDamage (1);
-			if(gameOver == false)
-				playerHealth.currentHealth -= 1;
-			// should make a timer so that the character won't get damaged that quick
-			// BUT I CANNOT DO ITTTTTT *CRIES* FOR NOW
-			damaged = true;
-			if (playerHealth.currentHealth <= 0) {
-				gameOver = true;
-			}
+			print (invulnTime);
+			if (Time.time > invulnTime) {
+				invulnTime = Time.time + 2;
+				if (gameOver == false)
+					playerHealth.currentHealth -= 1;
+				// should make a timer so that the character won't get damaged that quick
+				// BUT I CANNOT DO ITTTTTT *CRIES* FOR NOW
+				damaged = true;
+				if (playerHealth.currentHealth <= 0) {
+					gameOver = true;
+				}
+			} 
 //			Destroy (this);
 		}
 
