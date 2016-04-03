@@ -34,4 +34,13 @@ public class ScoreManager : MonoBehaviour
 		}
 	}
 
+	public void GameOver(){
+		isCounting = false;
+	}
+
+	public void Restart(){
+		score = 0;
+		isCounting = true;
+	}
+
 }
