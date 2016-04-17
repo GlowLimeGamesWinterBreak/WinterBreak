@@ -20,10 +20,7 @@ public class FirstPersonController : MonoBehaviour {
 	public bool gameStart = true;
 	public bool sprint = false;
 	public float endSprint = 0f;
-<<<<<<< HEAD
 	public float invulnTime = 0f;
-=======
->>>>>>> a8612f9155253f7e01a27b9e4e9c7217cd44b1a9
 
 	PlayerHealth playerHealth;
 
@@ -110,11 +107,7 @@ public class FirstPersonController : MonoBehaviour {
 			fader.GetComponent<FadeScript> ().toBlack ();
 			GameObject.FindGameObjectWithTag ("Score").GetComponent<ScoreManager> ().GameOver ();
 			if (Input.GetKeyDown (KeyCode.Space))
-<<<<<<< HEAD
 				Application.LoadLevel ("NoahBetaBuildScene");
-=======
-				Application.LoadLevel ("Untitled");
->>>>>>> a8612f9155253f7e01a27b9e4e9c7217cd44b1a9
 		}
 	}
 
@@ -164,11 +157,7 @@ public class FirstPersonController : MonoBehaviour {
 			itemScript.GetComponent<SpawnItems> ().powerupGone (pos);
 			Destroy (col.gameObject);
 		}
-<<<<<<< HEAD
 		if (col.gameObject.name == "PowerupSprint" || col.gameObject.name == "PowerupSprint(Clone)") {
-=======
-		if (col.gameObject.name == "PowerupSprint" || col.gameObject.tag == "PowerupSprint") {
->>>>>>> a8612f9155253f7e01a27b9e4e9c7217cd44b1a9
 			jump = true;
 			Destroy (col.gameObject);
 			sprintSlider.value = 10;
@@ -177,8 +166,6 @@ public class FirstPersonController : MonoBehaviour {
 		}
 		if (col.gameObject.name == "Enemy" || col.gameObject.tag == "Enemy") {
 //			playerHealth.TakeDamage (1);
-<<<<<<< HEAD
-			print (invulnTime);
 			if (Time.time > invulnTime) {
 				invulnTime = Time.time + .5f;
 				if (gameOver == false)
@@ -194,7 +181,6 @@ public class FirstPersonController : MonoBehaviour {
 		}
 
 		if (col.gameObject.name == "PowerupHealth" || col.gameObject.name == "PowerupHealth(Clone)") {
-=======
 			if(gameOver == false)
 				playerHealth.currentHealth -= 1;
 			// should make a timer so that the character won't get damaged that quick
@@ -207,8 +193,6 @@ public class FirstPersonController : MonoBehaviour {
 		}
 
 		if (col.gameObject.name == "PowerupHealth" || col.gameObject.tag == "PowerupHealth") {
->>>>>>> a8612f9155253f7e01a27b9e4e9c7217cd44b1a9
-			
 			Destroy (col.gameObject);
 		}
 	}
