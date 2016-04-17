@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour {
 		chasePlayer = false;
 		minDistance = 5;
 		visionDistance = 200;
+		agent.speed = 10.0f;
 	}
 	
 	// Update is called once per frame

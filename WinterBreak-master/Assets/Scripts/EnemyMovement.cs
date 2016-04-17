@@ -21,6 +21,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	void Update ()
 	{
+		nav.speed = 5.0f;
 		nav.SetDestination (player.position);
 
 //		// If the enemy and the player have health left...

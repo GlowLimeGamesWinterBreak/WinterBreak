@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Untitled.unity
+- path: Assets/NoahBetaBuildScene.unity
   isLoaded: 1
   isActive: 1

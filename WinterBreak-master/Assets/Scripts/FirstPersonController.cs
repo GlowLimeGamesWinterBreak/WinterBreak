@@ -9,7 +9,7 @@ public class FirstPersonController : MonoBehaviour {
 	public GameObject playerCamera;
 	public float upDownRange = 60.0f;
 	float verticalRotation = 0;
-	float verticalVelocity = 0;
+	public float verticalVelocity = 0;
 	public float jumpSpeed = 7.0f;
 	public bool jump = false;
 	public AudioSource walkSound;
@@ -107,7 +107,7 @@ public class FirstPersonController : MonoBehaviour {
 			fader.GetComponent<FadeScript> ().toBlack ();
 			GameObject.FindGameObjectWithTag ("Score").GetComponent<ScoreManager> ().GameOver ();
 			if (Input.GetKeyDown (KeyCode.Space))
-				Application.LoadLevel ("Untitled");
+				Application.LoadLevel ("NoahBetaBuildScene");
 		}
 	}
 
@@ -191,7 +191,7 @@ public class FirstPersonController : MonoBehaviour {
 //			playerHealth.TakeDamage (1);
 			print (invulnTime);
 			if (Time.time > invulnTime) {
-				invulnTime = Time.time + 2;
+				invulnTime = Time.time + .5f;
 				if (gameOver == false)
 					playerHealth.currentHealth -= 1;
 				// should make a timer so that the character won't get damaged that quick
